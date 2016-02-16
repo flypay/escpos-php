@@ -92,7 +92,7 @@ class EscposImage {
 		}
 
 		/* Load up using GD */
-		if(!file_exists($imgPath)) {
+		if(!file_exists($imgPath) && $this->checkExternalFileExists($imagePath)) {
 			throw new Exception("File '$imgPath' does not exist.");
 		}
 		$ext = pathinfo($imgPath, PATHINFO_EXTENSION);
@@ -137,6 +137,23 @@ class EscposImage {
 			return;
 		}
 		throw new Exception("Images are not supported on your PHP. Please install either the gd or imagick extension.");
+	}
+
+	/**
+	 * check an external file exists
+	 * 
+	 * @param  string $file 
+	 * @return boolean
+	 */
+	public function checkExternalFileExists($file)
+	{
+		$file_headers = @get_headers($file);
+
+		if($file_headers[0] == 'HTTP/1.1 404 Not Found') {
+		    return false;
+		}
+
+		return true;
 	}
 
 	/**
