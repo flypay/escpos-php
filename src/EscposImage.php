@@ -52,7 +52,7 @@ class EscposImage
         }
 
         /* Load up using GD */
-        if (!file_exists($imgPath) && $this->checkExternalFileExists($imagePath)) {
+        if (!file_exists($imgPath) && !$this->checkExternalFileExists($imgPath)) {
             throw new Exception("File '$imgPath' does not exist.");
         }
         $ext = pathinfo($imgPath, PATHINFO_EXTENSION);
