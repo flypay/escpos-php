@@ -1,10 +1,8 @@
 <?php
-/**
- * This capability profile is designed for the P-822D.
- * 
- * See
- * https://github.com/mike42/escpos-php/issues/50
- */
+namespace Flypay\Escpos;
+
+use Exception;
+
 class P822DCapabilityProfile extends DefaultCapabilityProfile {
 	function getSupportedCodePages() {
 		return array(

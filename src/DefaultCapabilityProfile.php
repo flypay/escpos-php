@@ -1,9 +1,8 @@
 <?php
-/**
- * This capability profile matches many recent Epson-branded thermal receipt printers.
- * 
- * For non-Epson printers, try the SimpleCapabilityProfile.
- */
+namespace Flypay\Escpos;
+
+use Exception;
+
 class DefaultCapabilityProfile extends AbstractCapabilityProfile {
 	function getCustomCodePages() {
 		return array();

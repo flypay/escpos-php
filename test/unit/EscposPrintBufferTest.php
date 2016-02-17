@@ -1,4 +1,8 @@
 <?php
+
+use Flypay\Escpos\DummyPrintConnector;
+use Flypay\Escpos\Escpos;
+
 /**
  * Example strings are pangrams using different character sets, and are
  * testing correct code-table switching.

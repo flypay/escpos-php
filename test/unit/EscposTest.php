@@ -1,4 +1,8 @@
 <?php
+
+use Flypay\Escpos\DummyPrintConnector;
+use Flypay\Escpos\Escpos;
+use Flypay\Escpos\EscposImage;
 class EscposTest extends PHPUnit_Framework_TestCase {
 	protected $printer;
 	protected $outputConnector;

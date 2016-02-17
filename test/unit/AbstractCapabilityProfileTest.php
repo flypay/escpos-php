@@ -8,7 +8,7 @@ class EscposCapabilityProfileTest extends PHPUnit_Framework_TestCase {
 	private $checklist;
 	
 	function setup() {
-		$this -> profiles = array('DefaultCapabilityProfile', 'EposTepCapabilityProfile', 'SimpleCapabilityProfile', 'StarCapabilityProfile', 'P822DCapabilityProfile');
+		$this -> profiles = array('\Flypay\Escpos\DefaultCapabilityProfile', '\Flypay\Escpos\EposTepCapabilityProfile', '\Flypay\Escpos\SimpleCapabilityProfile', '\Flypay\Escpos\StarCapabilityProfile', '\Flypay\Escpos\P822DCapabilityProfile');
 		$this -> checklist = array();
 		foreach($this -> profiles as $profile) {
 			$this-> checklist[] = $profile::getInstance();

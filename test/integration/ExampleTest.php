@@ -1,4 +1,7 @@
 <?php
+
+use Flypay\Escpos\EscposImage;
+
 class ExampleTest extends PHPUnit_Framework_TestCase {
 	/* Verify that the examples don't fizzle out with fatal errors */
 	private $exampleDir;

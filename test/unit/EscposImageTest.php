@@ -1,4 +1,6 @@
 <?php
+
+use Flypay\Escpos\EscposImage;
 class EscposImageTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Checking loading of an empty image - requires no libraries
@@ -221,7 +223,7 @@ class EscposImageTest extends PHPUnit_Framework_TestCase {
 		if($imagick && !EscposImage::isImagickLoaded()) {
 			$this -> markTestSkipped("imagick plugin required for this test");
 		}
-		$stub = $this -> getMockBuilder('EscposImage')
+		$stub = $this -> getMockBuilder('\Flypay\Escpos\EscposImage')
 				-> setMethods(array('isGdSupported', 'isImagickSupported'))
 				-> disableOriginalConstructor()
 				-> getMock();

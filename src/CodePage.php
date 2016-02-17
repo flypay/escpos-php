@@ -1,4 +1,8 @@
 <?php
+namespace Flypay\Escpos;
+
+use Exception;
+
 abstract class CodePage {
 	/** Code page constants, exported from iconv -l. Can be cut down*/
 	const CP037 = "CP037";
