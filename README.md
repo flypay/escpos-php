@@ -9,11 +9,10 @@ Basic usage
 A "hello world" receipt can be generated easily (Call this `hello-world.php`):
 ```php
 <?php
-require_once(dirname(__FILE__) . "/Escpos.php");
-$printer = new Escpos();
-$printer -> text("Hello World!\n");
-$printer -> cut();
-$printer -> close();
+$printer = new \Flypay\Escpos\Escpos();
+$printer->text("Hello World!\n");
+$printer->cut();
+$printer->close();
 ```
 This would be printed as:
 ```
@@ -31,23 +30,21 @@ del foo.txt
 From your web app, you could pass the output directly to a socket if your printer is networked:
 ```php
 <?php
-require_once(dirname(__FILE__) . "/Escpos.php");
-$connector = new NetworkPrintConnector("10.x.x.x", 9100);
-$printer = new Escpos($connector);
-$printer -> text("Hello World!\n");
-$printer -> cut();
-$printer -> close();
+$connector = new \Flypay\Escpos\NetworkPrintConnector("10.x.x.x", 9100);
+$printer = new \Flypay\Escpos\Escpos($connector);
+$printer->text("Hello World!\n");
+$printer->cut();
+$printer->close();
 ```
 
 Or to a local printer:
 ```php
 <?php
-require_once(dirname(__FILE__) . "/Escpos.php");
-$connector = new FilePrintConnector("/dev/ttyS0");
-$printer = new Escpos($connector);
-$printer -> text("Hello World!\n");
-$printer -> cut();
-$printer -> close();
+$connector = new \Flypay\Escpos\FilePrintConnector("/dev/ttyS0");
+$printer = new \Flypay\Escpos\Escpos($connector);
+$printer->text("Hello World!\n");
+$printer->cut();
+$printer->close();
 ```
 
 ### Basic workflow
@@ -222,7 +219,7 @@ A minimal example:
 ```php
 <?php
 $img = new EscposImage("logo.png");
-$printer -> graphics($img);
+$printer->graphics($img);
 ```
 
 See the [example/](https://github.com/mike42/escpos-php/blob/master/example/) folder for detailed examples.
